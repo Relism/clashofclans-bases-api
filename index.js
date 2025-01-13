@@ -7,6 +7,14 @@ const PORT = 3000;
 
 const baseUrl = "https://clashofclans-layouts.com";
 
+app.set("view engine", "ejs");
+
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.render("index", { title: "Clash of Clans Base Fetcher !" });
+});
+
 /**
  * Fetches base layouts from a given page URL.
  *
